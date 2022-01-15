@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+
+    <!-- <form [formGroup]="userForm" (ngsubmit)="PostData(userForm)">
+      <div class="file-upload">
+        <input type="file" name="image" formControlName="photo" ng2FileSelect [uploader]="uploader" accept="image/x-png,image/gif,image/jpeg" (change)="handleupload($event.target.files)" />
+        <button type="button" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">Upload</button>
+        <button type="button" (click)="uploader.uploadAll()">Upload</button>
+        <ion-button type="submit">Upload</ion-button>
+      </div>
+    </form> -->
+
+    <h1 style="text-align: center">Fun Of Heuristic File Uploader</h1>
+
+    <div style="text-align: center">
+      <form>      
+        <div>
+          <input type="file" name="image" (change)="UploadService.selectImage($event)" />
+        </div>
+        <br>
+        <div>
+          <button type="submit" (click)="UploadService.onSubmit()">Upload</button>
+        </div>
+      </form>
+      <div>{{UploadService.progressCount}}</div>
+      <div id="prog" style="height: 50px; background-color: blue; width: 0%;">{{UploadService.progressCount}}</div>
+    </div>
+
+    <hr>
+    <h2 style="text-align: center">Multiple</h2>
+    <div style="text-align: center">
+      <form>      
+        <div>
+          <input type="file" name="images" multiple (change)="UploadService.selectMultipleImage($event)" />
+        </div>
+        <br>
+        <div>
+          <button type="submit" (click)="UploadService.onMultipleSubmit()">Multiple Upload</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</ion-content>
