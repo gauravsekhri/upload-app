@@ -27,8 +27,8 @@ exports.upload = (req, res) => {
     // res.send({
     //   message: "uploaded successfully"
     // });
-    // res.send(req.file);
-    res.send("done")
+    res.send(req.file);
+    //res.send("done")
   })
   // .then(data => {
   //   res.send({
